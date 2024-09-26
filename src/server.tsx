@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { jsxRenderer } from "hono/jsx-renderer";
 import { serveStatic } from "hono/deno";
+import { jsxRenderer } from "hono/jsx-renderer";
 import { logger } from "hono/logger";
 
 const isProduction = !import.meta.env?.DEV;
@@ -20,6 +20,7 @@ app.use(
       <head>
         <title>Deno + Hono + Vite</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {isProduction
           ? <link rel="stylesheet" href="/assets/client.css" />
           : null}
